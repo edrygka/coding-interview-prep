@@ -11,6 +11,7 @@ This repository is where I document that work: **problem solutions**, short **ex
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/edrygka/coding-interview-prep/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0021-merge-two-sorted-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0021-merge-two-sorted-lists) |
+| [0083-remove-duplicates-from-sorted-list](https://github.com/edrygka/coding-interview-prep/tree/master/0083-remove-duplicates-from-sorted-list) |
 ## Two Pointers
 |  |
 | ------- |
