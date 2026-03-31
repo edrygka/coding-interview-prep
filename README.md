@@ -12,10 +12,12 @@ This repository is where I document that work: **problem solutions**, short **ex
 | [0019-remove-nth-node-from-end-of-list](https://github.com/edrygka/coding-interview-prep/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0021-merge-two-sorted-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0021-merge-two-sorted-lists) |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/edrygka/coding-interview-prep/tree/master/0083-remove-duplicates-from-sorted-list) |
+| [0160-intersection-of-two-linked-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0160-intersection-of-two-linked-lists) |
 ## Two Pointers
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/edrygka/coding-interview-prep/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0160-intersection-of-two-linked-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0160-intersection-of-two-linked-lists) |
 ## Stack
 |  |
 | ------- |
@@ -28,4 +30,8 @@ This repository is where I document that work: **problem solutions**, short **ex
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0021-merge-two-sorted-lists) |
+## Hash Table
+|  |
+| ------- |
+| [0160-intersection-of-two-linked-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0160-intersection-of-two-linked-lists) |
 <!---LeetCode Topics End-->
