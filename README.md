@@ -10,6 +10,7 @@ This repository is where I document that work: **problem solutions**, short **ex
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/edrygka/coding-interview-prep/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0021-merge-two-sorted-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0021-merge-two-sorted-lists) |
 ## Two Pointers
 |  |
 | ------- |
@@ -22,4 +23,8 @@ This repository is where I document that work: **problem solutions**, short **ex
 |  |
 | ------- |
 | [0155-min-stack](https://github.com/edrygka/coding-interview-prep/tree/master/0155-min-stack) |
+## Recursion
+|  |
+| ------- |
+| [0021-merge-two-sorted-lists](https://github.com/edrygka/coding-interview-prep/tree/master/0021-merge-two-sorted-lists) |
 <!---LeetCode Topics End-->
