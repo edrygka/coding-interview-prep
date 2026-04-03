@@ -6,14 +6,25 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if not p and not q:
-            return True
+        def is_valid(p, q):
+            if not p and not q:
+                return True
         
-        if not p or not q:
-            return False
+            if not p or not q:
+                return False
 
-        if p.val != q.val:
-            return False
+            if p.val != q.val:
+                return False
+            return True
 
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        deque = collections.deque([(p, q)])
+        while deque:
+            curr_p, curr_q = deque.popleft()
+            if not is_valid(curr_p, curr_q):
+                return False
+            
+            if curr_p:
+                deque.append((curr_p.left, curr_q.left))
+                deque.append((curr_p.right, curr_q.right))
+        return True
         
