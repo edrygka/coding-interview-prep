@@ -6,11 +6,18 @@
 #         self.right = right
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        if not root:
-            return False
+        deque = collections.deque([(root, 0)])
         
-        if not root.left and not root.right:
-            return root.val == targetSum
-        targetSum -= root.val
+        while deque:
+            (curr, prev_sum) = deque.popleft()
+            if not curr:
+                continue
+            if not curr.left and not curr.right:
+                if curr.val + prev_sum == targetSum:
+                    return True
 
-        return self.hasPathSum(root.left, targetSum) or self.hasPathSum(root.right, targetSum)
+            prev_sum += curr.val
+            deque.append((curr.left, prev_sum))
+            deque.append((curr.right, prev_sum))
+
+        return False
