@@ -19,6 +19,4 @@ class Solution:
         return self.something(node.left, targetSum, prev_sum) or self.something(node.right, targetSum, prev_sum)
 
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        if not root:
-            return False
         return self.something(root, targetSum, 0)
