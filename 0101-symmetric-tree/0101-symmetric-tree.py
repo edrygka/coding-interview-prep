@@ -5,22 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    def isIdentical(self, l1, l2):
+        if not l1 and not l2:
+            return True
+        if not l1 or not l2:
+            return False
+        if l1.val != l2.val:
+            return False
+        return True and self.isIdentical(l1.left, l2.right) and self.isIdentical(l1.right, l2.left)
+        
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if not root.left and not root.right:
             return True
-
-        deque = collections.deque([(root.left, root.right)])
-
-        while deque:
-            (curr1, curr2) = deque.popleft()
-            if not curr1 and not curr2:
-                continue
-            if not curr1 or not curr2:
-                return False
-
-            if curr1.val != curr2.val:
-                return False
-            
-            deque.append((curr1.left, curr2.right))
-            deque.append((curr1.right, curr2.left))
-        return True
+        return self.isIdentical(root.left, root.right)
