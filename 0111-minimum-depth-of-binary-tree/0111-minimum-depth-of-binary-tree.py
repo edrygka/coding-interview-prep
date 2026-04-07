@@ -8,9 +8,15 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-        if not root.right:
-            return 1 + self.minDepth(root.left)
-        if not root.left:
-            return 1 + self.minDepth(root.right)
 
-        return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
+        deque = collections.deque([(root, 1)])
+        while deque:
+            (curr, min_depth) = deque.popleft()
+
+            if curr.left:
+                deque.append((curr.left, min_depth + 1))
+            if curr.right:
+                deque.append((curr.right, min_depth + 1))
+            
+            if not curr.left and not curr.right:
+                return min_depth
