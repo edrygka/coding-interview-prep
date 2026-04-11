@@ -18,7 +18,7 @@ class Solution:
             merged.left = self.mergeTrees(root1.left, None)
             merged.right = self.mergeTrees(root1.right, None)
             return merged
-        merged = TreeNode(root1.val + root2.val)
-        merged.left = self.mergeTrees(root1.left, root2.left)
-        merged.right = self.mergeTrees(root1.right, root2.right)
-        return merged
+        root1.val += root2.val
+        root1.left = self.mergeTrees(root1.left, root2.left)
+        root1.right = self.mergeTrees(root1.right, root2.right)
+        return root1
