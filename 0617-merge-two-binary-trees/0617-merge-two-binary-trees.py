@@ -8,28 +8,17 @@ class Solution:
     def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root1 and not root2:
             return None
-        merged = TreeNode()
-        queue = collections.deque([(root1, root2, merged)])
-        while queue:
-            (curr1, curr2, curr_merged) = queue.popleft()
-            merged_val = 0
-            if not curr1:
-                merged_val += curr2.val
-            elif not curr2:
-                merged_val += curr1.val
-            else:
-                merged_val = curr1.val + curr2.val
-
-            curr_merged.val = merged_val
-
-            if (curr1 and curr1.left) or (curr2 and curr2.left):
-                curr1_left = curr1.left if curr1 else None
-                curr2_left = curr2.left if curr2 else None
-                curr_merged.left = TreeNode()
-                queue.append((curr1_left, curr2_left, curr_merged.left))
-            if (curr1 and curr1.right) or (curr2 and curr2.right):
-                curr1_right = curr1.right if curr1 else None
-                curr2_right = curr2.right if curr2 else None
-                curr_merged.right = TreeNode()
-                queue.append((curr1_right, curr2_right, curr_merged.right))
+        if not root1:
+            merged = root2
+            merged.left = self.mergeTrees(None, root2.left)
+            merged.right = self.mergeTrees(None, root2.right)
+            return merged
+        if not root2:
+            merged = root1
+            merged.left = self.mergeTrees(root1.left, None)
+            merged.right = self.mergeTrees(root1.right, None)
+            return merged
+        merged = TreeNode(root1.val + root2.val)
+        merged.left = self.mergeTrees(root1.left, root2.left)
+        merged.right = self.mergeTrees(root1.right, root2.right)
         return merged
