@@ -5,12 +5,19 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def validateInRange(self, node, minV = -math.inf, maxV = math.inf):
-        if not node:
-            return True
-        if not (minV < node.val) or not (node.val < maxV):
-            return False
-        return self.validateInRange(node.left, minV, node.val) and self.validateInRange(node.right, node.val, maxV)
-
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        return self.validateInRange(root)
+        stack = []
+        prev = -math.inf
+        curr = root
+        while curr or stack:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+
+            curr = stack.pop()
+            if curr.val <= prev:
+                return False
+
+            prev = curr.val
+            curr = curr.right
+        return True
